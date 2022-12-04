@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-weather-widget',
@@ -8,20 +10,28 @@ import { Component, OnInit } from '@angular/core';
 export class WeatherWidgetComponent implements OnInit {
 
   WeatherData: any;
-
+  constructor(private api: ApiService, private snackBar: MatSnackBar) { }
   ngOnInit() {
     this.WeatherData = {
       main: {},
       isDay: true
     };
     this.getWeatherData();
-    console.log(this.WeatherData);
   }
 
   getWeatherData() {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=mumbai&appid=ff1bc4683fc7325e9c57e586c20cc03e')
-      .then(response => response.json())
-      .then(data => { this.setWeatherData(data); })
+    this.api.getWeatherData().subscribe({
+      next: (res: any) => {
+        this.setWeatherData(res);
+      },
+      error: () => {
+        this.snackBar.open('Something went wrong', '', {
+          duration: 3000,
+          verticalPosition: 'top',
+          horizontalPosition: 'right'
+        })
+      }
+    })
   }
 
   setWeatherData(data: any) {

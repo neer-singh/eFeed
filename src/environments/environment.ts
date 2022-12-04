@@ -14,13 +14,11 @@ export const environment = {
     measurementId: 'G-YB7MREHWJV',
   },
   production: false,
-  apiKey: "AIzaSyBlZWxePzlNVdOZ_Nhu_Vh3seRKeAYmU40",
-  authDomain: "efeed-342620.firebaseapp.com",
-  projectId: "efeed-342620",
-  storageBucket: "efeed-342620.appspot.com",
-  messagingSenderId: "899497983198",
-  appId: "1:899497983198:web:b0ad0f669f4099c455d64f",
-  measurementId: "G-YB7MREHWJV"
+  PHONE_API: 'https://phonevalidation.abstractapi.com/',
+  PHONE_API_KEY: '3f0680d1d52b411e805642106b3a13d6',
+  PINCODE_API: 'https://api.postalpincode.in/pincode/',
+  WEATHER_API: 'https://api.openweathermap.org/data/2.5/weather?',
+  WEATHER_API_KEY: 'ff1bc4683fc7325e9c57e586c20cc03e'
 };
 
 /*
