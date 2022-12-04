@@ -1,0 +1,22 @@
+<div class="w-full">
+  <label mat-label [for]="label"
+    >{{ label }}<span *ngIf="mandatory" class="text-error">*</span></label
+  >
+  <mat-form-field [appearance]="appearance" class="w-full">
+    <input
+      [readonly]="readonly"
+      [autocomplete]="autocomplete"
+      matInput
+      [formControl]="formControlname"
+      [type]="type"
+      [placeholder]="placeHolder"
+    />
+  </mat-form-field>
+  <ng-container></ng-container>
+  <ng-container *ngFor="let key of keyofErrors">
+    <mat-error *ngIf="formControlname.touched; else placeHolder1">{{
+      customErrorMessages[key]
+    }}</mat-error>
+    <ng-template #placeHolder1> <div class="pb-5"></div></ng-template>
+  </ng-container>
+</div>

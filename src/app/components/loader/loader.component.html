@@ -1,0 +1,7 @@
+<div *ngIf="isLoading" cdkOverlayOrigin #originOverlay="cdkOverlayOrigin">
+  <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="originOverlay" [cdkConnectedOverlayOpen]="isLoading">
+    <div class="custom_overlay">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</div>

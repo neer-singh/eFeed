@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -96,12 +97,29 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "registration:build:production",
+            "firebaseProject": "efeed-342620",
+            "firebaseHostingSite": "efeed-342620"
+          }
         }
       }
+    }
+  },
+  "cli": {
+    "analytics": "12c5b63f-7446-4f32-83bf-715e5810f3e4",
+    "cache": {
+      "enabled": false
     }
   }
 }

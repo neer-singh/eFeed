@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "efeed-342620": {
+      "hosting": {
+        "registration": [
+          "efeed-342620"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "efeed-342620"
+  }
+}
