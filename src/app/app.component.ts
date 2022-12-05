@@ -52,27 +52,27 @@ export class AppComponent {
     value.dob = date
     console.log(value);
 
-    // this.api.handleLoading(true)
-    // this.api.postForm(value).then((res => {
+    this.api.handleLoading(true)
+    this.api.postForm(value).then((res => {
 
-    //   this.api.handleLoading(false)
-    //   this.snackBar.open('Done', '', {
-    //     duration: 3000,
-    //     verticalPosition: 'top',
-    //     horizontalPosition: 'right'
-    //   })
-    //   this.isValidPincode = false
-    //   this.isValidNumber = false
-    //   this.form.reset()
-    //   this.form.get("avatar")?.patchValue("")
-    // })).catch((error) => {
+      this.api.handleLoading(false)
+      this.snackBar.open('Done', '', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right'
+      })
+      this.isValidPincode = false
+      this.isValidNumber = false
+      this.form.reset()
+      this.form.get("avatar")?.patchValue("")
+    })).catch((error) => {
 
-    //   this.snackBar.open('Something went Wrong', '', {
-    //     duration: 3000,
-    //     verticalPosition: 'top',
-    //     horizontalPosition: 'right'
-    //   })
-    // })
+      this.snackBar.open('Something went Wrong', '', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right'
+      })
+    })
   }
   handleDob(event: any) {
     const dob = new Date(event.value);
